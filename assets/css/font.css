@@ -1,0 +1,56 @@
+
+
+
+
+/* Helvetica */
+@font-face{
+    font-family: 'Helvetica';
+    src: url('../font/Helvetica.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face{
+    font-family: 'Helvetica';
+    src: url('../font/Helvetica\ Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+
+
+/* Inferi-NormalItalic */
+@font-face{
+    font-family: 'Inferi-NormalItalic';
+    src: url('../font/Inferi-Trial-NormalItalic.otf') format('opentype');
+    font-weight: 300;
+}
+
+
+
+
+/* kr */
+/* Pretendard */
+@font-face{
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+}
+

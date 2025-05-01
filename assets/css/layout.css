@@ -1,0 +1,479 @@
+@import'./reset.css';
+@import'./common.css';
+@import'./font.css';
+
+
+
+
+/* header */
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    /* mix-blend-mode: difference; */
+}
+/* 헤더 색상변경 */
+#header.dark{
+    color: #000;
+}
+#header .header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 100px;
+}
+#header .logo span{
+    font-family: Inferi-NormalItalic;
+    font-size: 22.4px;
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+#header .gnb .nav-list{
+    display: flex;
+    height: 100%;
+}
+#header .gnb .nav-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 20px;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+/* 버튼 */
+#header .btn-area{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 4vw;
+    background: #fff;
+    color: #000;
+    transition: background-color 0.6s, color 0.3s;
+}
+#header .btn-area a{
+    display: block;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 15px 20px;
+}
+#header .btn-area:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+/* 효과 */
+#header .gnb .nav-item .title{
+    position: relative;
+    overflow: hidden;
+}
+#header .gnb .nav-item .title span{
+    /* transform이 들어갈 수 있도록 */
+    display: block;
+    transition: .3s;
+}
+#header .gnb .nav-item .title span.last{
+    position: absolute;
+    top: 0;
+    transform: translateY(100%);
+}
+/* 위로 올라감 */
+#header .gnb .nav-item .title:hover .first{
+    transform: translateY(-100%);
+}
+/* 밑으로 내려감 */
+#header .gnb .nav-item .title:hover .last{
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+/* footer */
+#footer{
+    padding-top: 120px;
+}
+#footer .white-area{
+    background: #fff;
+    color: #000;
+    padding: 130px 0;
+    border-radius: 25px;
+}
+#footer .white-area .head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 1;
+    gap: 20px;
+}
+#footer .white-area .head .flex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#footer .white-area .circle{
+    position: relative;
+    font-size: 8px;
+    line-height: 8px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #c51fe2;
+}
+#footer .white-area .circle::after{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    width: 100%;
+    height: 100%;
+    margin: -50% auto auto -50%;
+    transform-origin: 50% 50%;
+    border-radius: 50%;
+    background-color: #c51fe2;
+    opacity: 1;
+    pointer-events: none;
+    animation: color_motion 2s cubic-bezier(.2,1,.2,1) infinite;
+}
+/* animation */
+@keyframes color_motion{
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+#footer .white-area .sub{
+    font-size: 18px;
+    letter-spacing: .1em;
+}
+/* 글자 모션 */
+#footer .white-area .title{
+    position: relative;
+    font-size: 110px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 30px;
+    overflow: hidden;
+    text-align: center;
+}
+#footer .white-area .title::before{
+    content: "";
+    position: absolute;
+    bottom: -0.3125rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    /* opacity: 0; */
+    transform: translateY(0.625rem) translateZ(0);
+    transition: transform .6s cubic-bezier(0.165, 0.84, 0.44, 1),opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#footer .white-area .title:hover::before{
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+}
+#footer .white-area .title span{
+    display: block;
+    transition: transform .6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#footer .white-area .title span.last{
+    position: absolute;
+    top: 0;
+    transform: translateY(100%);
+}
+#footer .white-area .title:hover .first{
+    transform: translateY(-100%);
+}
+#footer .white-area .title:hover .last{
+    transform: translateY(0);
+}
+
+#footer .white-area .info-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#footer .white-area .info-item{
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    font-size: 18px;
+    letter-spacing: .1em;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+/* 밑줄 모션 */
+#footer .white-area .info-item::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    content: '';
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:transform .3s .4s;
+    z-index: 2;
+}
+#footer .white-area .info-item::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    content: '';
+    transform: scaleX(1);
+    transform-origin: right;
+    transition:transform .3s;
+    z-index: 2;
+}
+#footer .white-area .info-item:hover:before{
+    transform: scaleX(0);
+    transform-origin: right;
+}
+#footer .white-area .info-item:hover:after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+/* 글자모션 */ 
+#footer .bottom-area .line{
+    overflow: hidden;
+}
+#footer .bottom-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 100px 0 40px 0;
+}
+#footer .bottom-area .copy{
+    font-size: 11.9vw;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+}
+#footer .bottom-area p{
+    padding-top: 50px;
+    letter-spacing: .1em;
+}
+
+
+
+
+
+
+/* 반응형 */
+/* 
+    !pc먼저 만들었을때 기준!
+    화면을 줄여가면서 만들어야함
+    max-width: 1200px - 1200px 이하일때
+*/
+#header .btn-menu{
+    display: none;
+}
+#header .side-nav{
+    display: none;
+}
+
+/* 
+    꼭 개발자모드에서 클래스명 복사해서 똑같이 써야함
+    그래야 점수가 똑같아서 적용됨
+*/
+
+/* 1040px 이하일때 */
+@media (max-width:1280px){
+
+}
+
+
+/* 1040px 이하일때 */
+@media (max-width:1024px){
+
+    #footer .white-area .title{
+        font-size: 72px;
+    }
+}
+
+
+
+
+/* 960px 이하일때(960px보다 화면이 작아졌을때) */
+@media (max-width:960px){
+
+    /* header */
+    #header .btn-area{
+        display: none;
+    }
+    #header .gnb{
+        display: none;
+    }
+    #header .btn-menu{
+        display: block;
+    }
+
+
+    /* 햄버거메뉴 */
+    #header .side-nav{
+        display: block;
+        position: fixed;
+        top: 0;right: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0 24px;
+        /* 화면을 줄였을때, 넘쳤을때도 스크롤되게하는 코드 */
+        overflow-y: auto;
+        background-color: #000;
+        /* 화면에 바로 보이면 안되기때문에 오른쪽에 숨겨놨음 */
+        transform: translateX(100%);
+        transition: transform .6s;
+    }
+    /* 열리면서 보임 */
+    #header .side-nav.on{
+        transform: translateX(0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* 햄버거메뉴 버튼 */
+    /* nav-top */
+    #header .side-nav .nav-top{
+        position: absolute;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100px;
+        padding: 0 30px;
+    }
+    #header .side-nav .nav-top .btn-close{
+        line-height: 0;
+        /* margin-right: -24px; */
+        padding: 16px;
+    }
+    #header .side-nav .nav-top .btn-close svg{
+        width: 18px;
+        height: 18px;
+    }
+
+    #header .side-nav .side-list .side-item a{
+        display: block;
+        font-size: 42px;
+        line-height: 1.3;
+        padding: 6px 0 14px 0;
+        color: #e5e5e5;
+    }
+    #header .side-nav .side-list .side-item a:hover{
+        color: #fff;
+        transition: color .3s;
+    }
+    
+    /* footer */
+    #footer .white-area .title{
+        font-size: 67px;
+    }
+
+
+}
+
+
+
+
+
+
+br.m{display: none;}
+
+/* 750px 이하일때 */
+@media (max-width:750px){
+
+    /* footer */
+    #footer{
+        padding-top: 100px;
+    }
+    #footer .white-area .title{
+        font-size: 50px;
+    }
+    
+    #footer .white-area .info-list{
+        flex-direction: column;
+        align-items: center;
+    }
+    #footer .white-area .info-item{
+        font-size: 17px;
+    }
+    #footer .bottom-area{
+        padding: 50px 0 20px 0;
+    }
+    #footer .bottom-area p{
+        padding-top: 30px;
+    }
+
+}
+
+
+
+
+/* 모바일 크기 (480px 이하) */
+@media (max-width: 480px){
+
+    /* header */
+    #header .logo span{
+        font-size: 18px;
+    }
+    #header .header-inner {
+        padding: 0 20px;
+        height: 100px;
+    }
+
+
+    /* footer */
+    #footer {
+        padding-top: 60px;
+    }
+    #footer .white-area .title{
+        font-size: 40px;
+    }
+    #footer .white-area .info-item{
+        font-size: 16px;
+    }
+    #footer .white-area{
+        padding: 100px 0;
+    }
+    #footer .bottom-area p{
+        font-size: 12px;
+        padding-top: 30px;
+    }
+
+}
+
+
+
+
+
+
+

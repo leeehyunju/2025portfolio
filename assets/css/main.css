@@ -1,0 +1,986 @@
+
+
+
+
+
+/* sc-visual */
+.sc-visual .visual-inner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.sc-visual .title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: .1em;
+}
+.sc-visual .title span{
+    font-family: Inferi-NormalItalic;
+    font-size: 120px;
+    white-space: nowrap;
+}
+
+/* 글자모션 */ 
+.sc-visual .title .line{
+    overflow: hidden;
+}
+.sc-visual .image-grid{
+    width: 100%;
+    height: 110%;
+    display: grid;
+    grid-template-columns: repeat(50, 2%);
+    grid-template-rows: repeat(50, 2%);
+}
+/* grid-area: row-start(시작 행) / column-start(시작 열) / row-end(끝나는 행) / column-end(끝나는 열); */
+.sc-visual .pos1{grid-area: 6 / 1 / 25 / 9;}
+.sc-visual .pos2{grid-area: 1 / 21 / 17 / 30;}
+.sc-visual .pos3{grid-area: 1 / 36 / 16 / 42;}
+.sc-visual .pos4{grid-area: 10 / 12 / 28 / 18;}
+.sc-visual .pos5{grid-area: 20 / 35 / 35 / 45;}
+.sc-visual .pos6{grid-area: 5 / 44 / 15 / 50;}
+.sc-visual .pos7{grid-area: 30 / 1 / 45 / 10;}
+.sc-visual .pos8{grid-area: 38 / 14 / 51 / 19;}
+.sc-visual .pos9{grid-area: 35 / 26 / 51 / 32;}
+.sc-visual .pos10{grid-area: 37 / 39 / 48 / 47;}
+
+.sc-visual .image-grid-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+
+
+
+
+
+/* sc-about */
+.sc-about{
+    position: relative;
+    padding-top: 15em;
+}
+.sc-about h2{
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+.sc-about .text-top{
+    display: flex;
+    padding-left: 32px;
+}
+
+/* 텍스트 */
+.sc-about .text-top .text{
+    font-size: 3.4vw;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #404040;
+    z-index: 20;
+}
+.sc-about .text-top .text .color{
+    font-family: Inferi-NormalItalic;
+    color: #fff;
+}
+/* 글자모션 */ 
+.sc-about .text-top .text .line{
+    overflow: hidden;
+}
+/* 텍스트 모션 */
+/* .sc-about .text-top .text .scroll-text{
+    position: relative;
+    width: max-content;
+    background: linear-gradient(to right, #fff, #fff) no-repeat;
+    background-clip: text;
+    background-size: 0%;
+    transition: background-size cubic-bezier(.1,.5,.5,1) 0.5s
+} */
+
+/* 텍스트2 */
+.sc-about .text-bottom{
+    padding: 150px 70px 0 0;
+}
+.sc-about .text-bottom .flex{
+    display: flex;
+    justify-content: flex-end;
+}
+.sc-about .text-bottom .desc{
+    line-height: 1.7;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+
+
+
+
+
+
+/* sc-font */
+.sc-font{
+    padding-top: 120px;
+    overflow: hidden;
+}
+.sc-font .marquee{
+    display: flex;
+    /* 줄바꿈 x */
+    white-space: nowrap; 
+    padding: 80px 0;
+}
+.sc-font .marquee .marquee-list{
+    display: flex;
+    animation: move 50s linear infinite;
+}
+.sc-font .marquee .marquee-item{
+    flex-shrink: 0;
+    padding-left: 75px;
+}
+.sc-font .marquee .marquee-item span{
+    font-size: 68px;
+    line-height: 1em;
+}
+
+/* animation */
+@keyframes move{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+
+
+/* sc-showcase */
+.sc-showcase{
+    position: relative;
+    height: 700vh;
+}
+.sc-showcase .title{
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 40px 27px 0;
+}
+.sc-showcase .sticky{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+.sc-showcase .item-area{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    /* 기본값 */
+    clip-path: inset(0% 0% 0% 0%);
+}
+.sc-showcase .item-area:nth-child(1){z-index: 4;}
+.sc-showcase .item-area:nth-child(2){z-index: 3;}
+.sc-showcase .item-area:nth-child(3){z-index: 2;}
+.sc-showcase .item-area:nth-child(4){z-index: 1;}
+
+.sc-showcase .item-area .text-area{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 130px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    max-width: 100%;
+    width: 80%;
+}
+.sc-showcase .item-area .text-area .col-left{
+    padding-bottom: 120px;
+}
+.sc-showcase .item-area .text-area .col-right{
+    display: flex;
+    flex-direction: column;
+}
+.sc-showcase .item-area .text-area .flex{
+    display: flex;
+    align-items: center;
+}
+.sc-showcase .item-area .text-area .line{
+    display: inline-block;
+    border-bottom: 1px solid #fff;
+    height: 1px;
+    width: 50px;
+}
+.sc-showcase .item-area .text-area .sub{
+    font-size: 18px;
+    padding-left: 15px;
+}
+.sc-showcase .item-area .text-area .head{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sc-showcase .item-area .text-area .headline{
+    text-transform: uppercase;
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+.sc-showcase .item-area .text-area .info{
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+.sc-showcase .item-area .text-area .info.custo{
+    margin-bottom: 100px;
+}
+.sc-showcase .item-area .text-area .tag-list{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    letter-spacing: 0;
+}
+
+/* 버튼 */
+.sc-showcase .item-area .link-list{
+    position: absolute;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    left: 50%;
+    bottom: 14%;
+    transform: translateX(-50%);
+    gap: 20px;
+    z-index: 20;
+}
+.sc-showcase .item-area .link-item{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border: 1px solid white;
+    backdrop-filter: blur(20px);
+    z-index: 1;
+    transition: background-color 0.6s ease; /* 테두리 색 전환 효과 */
+}
+.sc-showcase .item-area .link-item a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.sc-showcase .item-area .link-item:hover{
+    background: #fff;
+    color: #000;
+}
+.sc-showcase .item-area .btn-view{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    z-index: 10;
+    transform-origin: center; 
+    text-transform: uppercase;
+}
+/* 배경 어두움 */
+.sc-showcase .thumb.art::after{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: rgba(0,0,0,0.1);
+}
+.sc-showcase .thumb{
+    /* 이미지 3개가 겹쳐있어야해서
+    position: absolute; 줌 */
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.sc-showcase .thumb img{
+    position: relative;
+    width: 100%;
+    /* 창의 높이 100vh;로 설정해주면 부모의 높이가 줄더라도 
+       실제 img는 줄지 않음 */
+    height: 100vh;
+    object-fit: cover;
+}
+.sc-showcase .video-area{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.sc-showcase .video-area video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* video같은 애매하게 선택되는 이벤트 없애주는 코드 */
+    pointer-events: none;
+}
+
+
+
+
+
+
+/* sc-side */
+.sc-side{
+    padding-top: 140px;
+}
+.sc-side .text-area{
+    padding: 0 50px 0;
+}
+.sc-side .headline{
+    display: flex;
+    align-items: flex-start;
+    line-height: 1;
+    font-size: 115px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+/* 글자모션 */ 
+.sc-side .headline .line{
+    overflow: hidden;
+}
+/* 텍스트2 */
+.sc-side .text-bottom{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 40px;
+}
+.sc-side .text-bottom .desc{
+    display: flex;
+    justify-content: flex-end;
+    line-height: 1.7;
+    font-size: 20px;
+}
+.sc-side .btn-link a{
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 35px;
+}
+
+/* 슬라이드 */
+.sc-side .side-slide{
+    position: relative;
+    /* sticky가 되기위한 높이 설정 */
+    height: 500vh;
+}
+.sc-side .slide-wrap{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0 100px;
+    overflow: hidden;
+}
+.sc-side .slide-inner{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    /* flex는 자식요소들을 무조건 자기 크기안에 집어넣기때문에
+    자식 요소들의 크기가 엄청 큼에도 불구하고 감싸주지 못함!
+    그래서 자식요소들의 width를 다 인식시켜주려면, 
+    밑의 코드를 사용하면 두개의 자식요소의 width값을 다 인식할 수 있음*/
+    width: max-content;
+}
+.sc-side .slide-body{
+    display: flex;
+    align-items: center;
+}
+.sc-side .slide-list{
+    display: flex;
+}
+.sc-side .slide-item{
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+.sc-side .slide-item .img-title{
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 52px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 1;
+    z-index: 5;
+}
+
+/* 배경 어두움 */
+.sc-side .slide-item .thumb.dimmed::after{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+}
+.sc-side .slide-item .thumb{
+    position: relative;
+    border-radius: .625rem;
+    /* max-width: 35.625rem; */
+    aspect-ratio: 465 / 433;
+    object-fit: cover;
+    overflow: hidden;
+}
+.sc-side .slide-item .thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3S;
+}
+.sc-side .slide-item .video-area{
+    aspect-ratio: 465 / 433;
+    border-radius: .625rem;
+    overflow: hidden;
+}
+.sc-side .slide-item .video-area video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.sc-side .slide-item:hover img{
+    transform: scale(1.1);
+}
+
+/* 버튼 */
+.sc-side .btn-area{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+.sc-side .btn-link{
+    border-radius: 4vw;
+    background: #fff;
+    backdrop-filter: blur(20px);
+    color: #000;
+    padding: 15px 20px;
+    transition: background-color 0.6s, color 0.3s;
+}
+.sc-side .btn-link span{
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.sc-side .btn-link:hover{
+    color: #fff;
+    background-color: #000;
+}
+.sc-side .info-area{
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+.sc-side .info-area .tag-list{
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    color: #858585;
+}
+
+
+
+
+
+/* sc-goal */
+.sc-goal{
+    position: relative;
+}
+.sc-goal h2{
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+.sc-goal .text-top{
+    display: flex;
+    padding-left: 32px;
+}
+
+/* 텍스트 */
+.sc-goal .text-top .text{
+    font-size: 3.4vw;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #404040;
+    z-index: 20;
+}
+.sc-goal .text-top .text .color{
+    font-family: Inferi-NormalItalic;
+    color: #fff;
+}
+/* 텍스트 모션 */
+.sc-goal .text-top .text .scroll-text{
+    position: relative;
+    width: max-content;
+    background: linear-gradient(to right, #fff, #fff) no-repeat;
+    background-clip: text;
+    background-size: 0%;
+    transition: background-size cubic-bezier(.1,.5,.5,1) 0.5s
+}
+/* 텍스트2 */
+.sc-goal .text-bottom{
+    padding: 150px 70px 0 0;
+    white-space: nowrap;
+}
+.sc-goal .text-bottom .flex{
+    display: flex;
+    justify-content: flex-end;
+}
+.sc-goal .text-bottom .desc{
+    line-height: 1.7;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+.sc-goal .btn-link{
+    text-align: center;
+    margin-top: 20px;
+}
+.sc-goal .btn-link a{
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 35px;
+}
+
+
+
+
+
+
+/* 반응형 */
+br.m{display: none;}
+
+
+/* 1280px 이하일때 */
+@media (max-width:1280px){
+
+    /* about */
+    .sc-about{
+        padding-top: 12em;
+    }
+
+    /* showcase */
+    .sc-showcase .item-area .text-area .info{
+        display: none;
+    }
+
+    /* side */
+    .sc-side .text-bottom .desc{
+        margin: 20px 0 50px;
+    }
+}
+
+
+
+
+
+/* 1024px 이하일때 */
+@media (max-width:1024px){
+
+    /* about */
+    .sc-about .text-top .text{
+        line-height: 1.2;
+    }
+    .sc-about .text-bottom{
+        padding: 100px 0 0 0;
+    }
+    .sc-about .text-bottom .desc{
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 0;
+    }
+    .sc-about .text-bottom .flex{
+        display: block;
+        padding: 0 32px
+    }
+
+
+    /* font */
+    .sc-font{
+        padding-top: 80px;
+    }
+
+    /* showcase */
+    .sc-showcase .item-area .text-area{
+        margin: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .sc-showcase .item-area .text-area .flex{
+        justify-content: center;
+    }
+
+
+    /* goal */
+    .sc-goal .text-top .text{
+        line-height: 1.2;
+    }
+    .sc-goal .text-bottom .desc{
+        font-size: 18px;
+        width: 100%;
+        white-space: normal;
+    }
+    .sc-goal .text-bottom{
+        padding: 100px 0 0 0;
+    }
+    .sc-goal .text-bottom .flex{
+        display: block;
+        padding: 0 32px
+    }
+
+
+}
+
+
+
+
+
+
+
+/* 960px 이하일때(960px보다 화면이 작아졌을때) */
+@media (max-width:960px){
+
+    br{display: none;}
+
+
+    /* side */
+    .sc-side{
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
+        padding-top: 100px;
+    }
+    .sc-side .headline{
+        font-size: 90px;
+    }
+    .sc-side .text-bottom .desc{
+        display: flex;
+        justify-content: flex-start;
+        margin: 20px 0 50px;
+        font-size: 18px;
+    }
+    .sc-side .side-slide{
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .sc-side .slide-wrap{
+        height: auto;
+        overflow: visible;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 50px;
+    }
+    .sc-side .slide-inner{
+        height: auto;
+        transform: none;
+    }
+    .sc-side .slide-body{
+        overflow: visible;
+    }
+    .sc-side .slide-list{
+        display: block;
+    }
+    .sc-side .slide-item{
+        width: calc(100% - 40px); 
+        margin: 0 20px 0 20px;
+    }
+    .sc-side .info-area{
+        margin-bottom: 50px;
+    }
+
+
+    /* goal */
+    .sc-goal{
+        padding-top: 60px;
+    }
+
+}
+
+
+
+
+
+/* 767px 이하일때 */
+@media (max-width:767px){
+
+    br{display: none;}
+
+
+    /* visual */
+    .sc-visual .title{
+        letter-spacing: 0.04em;
+        line-height: 1.2;
+    }
+
+
+    /* about */
+    .sc-about h2{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 25px;
+    }
+    .sc-about .text-top{
+        padding-left: 0;
+    }
+    .sc-about .text-top .text{
+        font-size: 24px;
+        line-height: 1.2;
+        letter-spacing: 0;
+    }
+    .sc-about .text-bottom{
+        padding: 90px 0 0 0;
+    }
+    .sc-about .text-bottom .flex{
+        justify-content: flex-start; 
+        padding: 0;
+    }
+
+
+    /* font */
+    .sc-font {
+        padding-top: 20px;
+    }
+    .sc-font .marquee .marquee-item span{
+        font-size: 50px;
+        line-height: 1em;
+    }
+    .sc-font .marquee .marquee-item{
+        padding-left: 55px;
+    }
+
+
+
+    /* showcase */
+    .sc-showcase .item-area .text-area .headline{
+        font-size: 70px;
+    }
+    .sc-showcase .title{
+        justify-content: center;
+        text-align: center;
+        margin: 0 0 27px 0;
+    }
+
+
+    /* side */
+    .sc-side .headline{
+        font-size: 70px;
+    }
+    .sc-side .text-area{
+        padding: 0;
+    }
+    .sc-side .text-bottom .desc{
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        line-height: 1.5;
+        word-break: keep-all;
+    }
+    .sc-side .slide-wrap{
+        height: auto;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    .sc-side .slide-item .img-title{
+        top: 35%;
+        font-size: 48px;
+    }
+
+
+    /* goal */
+    .sc-goal{
+        padding-top: 40px;
+    }
+    .sc-goal h2{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 25px;
+    }
+    .sc-goal .text-top{
+        padding-left: 0;
+    }
+    .sc-goal .text-top .text{
+        font-size: 24px;
+        line-height: 1.2;
+        letter-spacing: 0;
+    }
+    .sc-goal .text-bottom{
+        padding: 90px 0 0 0;
+    }
+    .sc-goal .text-bottom .desc{
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 0;
+    }
+    .sc-goal .text-bottom .flex{
+        justify-content: flex-start; 
+        padding: 0;
+    }
+
+
+}
+
+
+
+
+
+
+/* 모바일 크기 (480px 이하) */
+@media (max-width: 480px) {
+
+    .inner{
+        margin: 0 15px;
+    }
+
+    /* visual */
+    .sc-visual .title{
+        font-size: 45px;
+        line-height: 1.3;
+    }
+    .sc-visual .title span{
+        font-size: 72px;
+    }
+
+
+    /* about */
+    .sc-about h2{
+        font-size: 22px;
+    }
+    .sc-about .text-bottom .desc{
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+
+    /* font */
+    .sc-font .marquee .marquee-item span{
+        font-size: 32px;
+    }
+    .sc-font .marquee .marquee-item {
+        padding-left: 35px;
+    }
+
+
+    /* showcase */
+    .sc-showcase .item-area .text-area .headline{
+        font-size: 45px;
+    }
+    .sc-showcase .item-area .btn-view{
+        font-size: 14px;
+    }
+    .sc-showcase .item-area .link-item{
+        width: 100px;
+        height: 100px;
+    }
+
+    /* side */
+    .sc-side .headline{
+        font-size: 40px;
+    }
+    .sc-side .text-bottom .desc{
+        font-size: 14px;
+    }
+    .sc-side .slide-item .img-title{
+        font-size: 30px;
+    }
+    .sc-side .slide-item{
+        width: calc(100% - 30px);
+        margin: 0 15px 0 15px;
+    }
+    .sc-side .btn-link{
+        padding: 10px 10px;
+       
+    }
+    .sc-side .info-area{
+        font-size: 14px;
+    }
+    .sc-side .info-area .tag-list{
+        gap: 0;
+    }
+
+    /* goal */
+    .sc-goal h2{
+        font-size: 22px;
+    }
+    .sc-goal .text-bottom .desc {
+        font-size: 16px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+    지금까지 작업했던 코드가 위의 코드
+    꼭 위에서부터 밑으로 순차적으로!
+
+*/
+
+/* 1280px부터 ~ 1025px까지 잡기 */
+/* @media (max-width:1280px) {
+
+} */
+
+/* 테블릿 */
+/* 1024px부터 ~ 768px까지 잡기 */
+/* @media (max-width:1024px) {
+
+} */
+
+/* 모바일 */
+/* 768px부터 ~ 320px까지 잡기 */
+/* @media (max-width:767px) {
+
+} */
